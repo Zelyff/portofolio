@@ -9,7 +9,7 @@ const {renderMarkdown}=require('./lib/markdown.cjs');
 const keys=(value,prefix='')=>Object.entries(value).flatMap(([k,v])=>typeof v==='object'?keys(v,prefix+k+'.'):[prefix+k]);
 assert.deepEqual(keys(copy.id).sort(),keys(copy.en).sort());
 const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-assert(html.includes('class="hero__title">ZELYFF'));
+assert(html.includes('class="hero__title">Zelyff'));
 assert(html.includes('class="status-card"'));
 assert.equal((html.match(/class="status-card__dot"/g)||[]).length,3);
 assert(html.includes('family=Space+Grotesk:'));

@@ -19,6 +19,7 @@
   --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-handwriting: "Caveat", cursive, sans-serif;
 
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;

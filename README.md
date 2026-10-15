@@ -73,62 +73,19 @@ flowchart LR
 
 ---
 
-## 💎 Proyek Unggulan (AlamNusa Ecosystem)
+## 💎 Ikhtisar Proyek Unggulan
 
-Portofolio ini mendokumentasikan 4 sistem perangkat lunak utama yang dibangun dari kebutuhan nyata komunitas AlamNusa:
+Sistem dan perangkat lunak yang dibangun dari kebutuhan nyata komunitas dan server AlamNusa:
 
-### 1. 🍳 NusaCooking — 3D Interactive Cooking Station
-* **Teknologi**: Java 21, Paper 1.21.4+, Nexo 1.0.0+, JOML Transforms.
-* **Deskripsi**: Sistem memasak modular RPG 3D berbasis entitas modern **Display Entities** (`ItemDisplay` & Mojang `Interaction`) tanpa lag tick dan bebas glitch blok vanilla.
-* **Fitur Utama**:
-  * **Finite State Machine (FSM)** deterministik 6 fase: `IDLE` ➔ `PREPARING` ➔ `COOKING` ➔ `READY_TO_COLLECT` ➔ `BURNT`.
-  * **Minigame Interaktif (QTE)**: Mengaduk (*Stir*), membalik (*Flip*), dan memotong (*Chop*) dengan indikator *sweetspot* Action Bar.
-  * **Sistem Bintang (1-5 Bintang) & Nutrisi**: Terintegrasi langsung dengan Paper `FoodComponent` (Food Level, Saturation, dan potion effects).
-  * **Zero-Loss Persistence**: Serialisasi snapshot byte array menggunakan Bukkit `PersistentDataContainer` (PDC). Bahan dan countdown gosong tetap aman walau server restart mendadak.
-  * **Proteksi Klaim & Co-op**: Kompatibel dengan GriefPrevention, WorldGuard, dan RedProtect.
+| Proyek | Kategori | Stack Utama | Status & Akses | Dokumentasi |
+| :--- | :--- | :--- | :--- | :--- |
+| **NusaCooking** | Minecraft Plugin | Java 21 · Paper 1.21.4+ · Display Entities | Selesai · Privat AlamNusa | [Buka Panduan](docs/nusacooking/) |
+| **NusaInv** | Minecraft Plugin | Java 21 · Paper 1.21.4+ · MMOItems / MythicLib | Selesai · Privat AlamNusa | [Buka Panduan](docs/nusainv/) |
+| **NusaSkBlocker** | Server Utility | Java 21 · Paper 1.21.4+ · AuraSkills 2.2+ | Selesai · Privat AlamNusa | [Buka Panduan](docs/nusaskblocker/) |
+| **GogoAssistant** | Discord AI Bot | Node.js 22 · discord.js · Gemini AI Cascade | Aktif · Komunitas | [Buka Panduan](docs/gogoasisstant/) |
 
----
+> 💡 *Untuk detail arsitektur lengkap, panduan teknis, dan alur sistem tiap proyek, jelajahi langsung melalui portal dokumentasi di [docs/](docs/) atau via antarmuka web [zelyff.github.io/portofolio/docs/](https://zelyff.github.io/portofolio/docs/).*
 
-### 2. 🗡️ NusaInv — Next-Gen RPG Equipment & Accessory System
-* **Teknologi**: Java 21, Paper 1.21.4+, MMOItems 6.10+, MythicLib 1.7+.
-* **Deskripsi**: Sistem inventaris aksesori RPG (Cincin, Kalung, Artefak, Relik) kelas enterprise dengan jaminan **Zero Data Loss**.
-* **Fitur Utama**:
-  * **Storage Engine Transaksional**: Menggunakan snapshot byte array *immutable* di memori sebelum penulisan disk, antrean *single-worker serialized queue*, dan *write-ahead journaling* (`.pending.yml` ditukar secara `ATOMIC_MOVE`).
-  * **Isolasi State `FAILED`**: File playerdata yang rusak tidak akan pernah ditimpa dengan data kosong saat pemain logout.
-  * **Multi-Provider Visual Resolver**: Mendukung native Minecraft 1.21.2+ `item_model` Data Components, Nexo, ItemsAdder, Oraxen, MMOItems, dan CMD klasik.
-  * **Smart Offhand Restrictor**: Mencegah eksploitasi stat ganda dari senjata berat/dua tangan (Pedang, Tombak, Tongkat Sihir, Busur) di tangan kiri tanpa mengganggu perisai atau totem vanilla.
-  * **Stash & Recovery Engine**: Mengalihkan aksesori yang tertinggal akibat tas penuh atau izin slot kedaluwarsa ke antrean `/equipment recover`.
-  * **Pengujian**: 36/36 Unit Tests lulus 100%.
-
----
-
-### 3. 🛡️ NusaSkBlocker — Per-World AuraSkills Hard Suppression
-* **Teknologi**: Java 21, Paper 1.21.4+, AuraSkills 2.2.4+.
-* **Deskripsi**: Utilitas supresi mekanik AuraSkills berbasis dunia (*per-world*) secara deterministik, granular, dan **100% non-destruktif**.
-* **Fitur Utama**:
-  * **100% Non-Destructive**: Progres level, XP, dan stat pemain di database AuraSkills **tidak pernah disentuh atau diubah**. Stat hanya ditarik sementara saat berada di dunia nonaktif.
-  * **Dual-Layer Architecture**:
-    1. *Primary (High Performance Reflection)*: Injeksi langsung ke internal `BukkitWorldManager.disabledWorlds` (`ConcurrentHashSet`) dan pemanggilan `StatManager.reloadAllTraits`.
-    2. *Secondary (Event Fallback)*: Intersepsi ketat event Bukkit (`XpGainEvent`, `ManaAbilityActivateEvent`, `LootDropEvent`, `CustomRegenEvent`) dan pembersihan langsung `AttributeModifier`.
-  * **Kontrol Fitur Granular**: Supresi independen per-fitur (`xp`, `stats`, `abilities`, `actionbar`).
-  * **Decoupled Action Bar HUD Forwarder**: Jembatan `ActionBarBridge` mandiri yang tetap menampilkan HUD HP & Mana walau stat sedang diblokir di dungeon.
-  * **Dukungan Dynamic Dungeons (SWM)**: Trie pattern resolver dengan pencocokan wildcard *longest-prefix* (misal `dng_*`).
-  * **Anti-Spam State Guard & Safe Config Migration (v2)**.
-  * **Pengujian**: 21/21 Unit Tests lulus 100%.
-
----
-
-### 4. 🌿 GogoAssistant (Gogo) — Discord AI Community Assistant
-* **Teknologi**: Node.js >= 22, discord.js v14.27.0, Google Gemini 3.6 Flash / 3.5 Flash Lite, OpenRouter.
-* **Deskripsi**: Bot asisten AI komunitas resmi server Minecraft AlamNusa Season 7 dengan arsitektur RAG modular.
-* **Fitur Utama**:
-  * **Multi-Provider AI Cascade**: Model utama Gemini 3.6 Flash, siaga otomatis (*fast fallback*) ke Gemini 3.5 Flash Lite, dan cadangan lintas penyedia via OpenRouter.
-  * **BM25 RAG Knowledge Retrieval**: Mengindeks 23 panduan resmi server AlamNusa dan sinkronisasi berkala channel pengumuman Discord tanpa restart bot.
-  * **Gaya Bahasa Alami Gamer**: Anti-kaku, membersihkan garis pemisah markdown (`---`), menyajikan perbandingan komparatif luwes, dan memahami bahasa slang Minecraft komunitas.
-  * **Alur Persetujuan Wiki Admin (`/wiki`)**: Pembuatan draf panduan via modal form Discord dan persetujuan instan satu klik via tombol interaktif.
-  * **Notifikasi Kesenjangan Pengetahuan (Owner Gap Notification)**: Mengirimkan DM otomatis ke Owner server saat ada pertanyaan pemain yang belum tercakup di wiki.
-  * **Visi Multimodal**: Menganalisis screenshot error crash Minecraft, tas NusaInv, dan resep custom.
-  * **Pengujian**: 291/291 Unit Tests lulus 100%.
 
 ---
 

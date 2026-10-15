@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="14" fill="#0B0E14"/>
-  <text x="21" y="43" font-family="'Space Grotesk', 'Arial', sans-serif" font-weight="700" font-size="30" fill="#F7F7F5">Z</text>
-  <circle cx="47" cy="45" r="4" fill="#19864B"/>
+  <!-- Cursive Z drawn with fluid pen strokes -->
+  <path d="M20 20 C22 19, 28 18, 34 19 C36 19.5, 37 20.5, 35 22 C30 26, 24 33, 21 39 C19 42, 18 44, 20 45 C22 46, 28 45.5, 34 44 C36 43.5, 38 43, 39 44" 
+        fill="none" stroke="#F7F7F5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="46" cy="46" r="4" fill="#19864B"/>
 </svg>
