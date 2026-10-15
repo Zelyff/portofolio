@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#ffffff" />
+  <script src="js/theme.js"></script>
+
+  <title>Zelyff — Server Admin &amp; Developer</title>
+  <meta name="description" content="Zelyff — Server Admin & Developer. Belajar dan membangun lewat proyek nyata: mengelola server, menulis kode, dan bereksperimen di ekosistem Minecraft." />
+  <link rel="canonical" href="https://zelyff.github.io/portofolio/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Zelyff — Server Admin & Developer" />
+  <meta property="og:description" content="Belajar dan membangun lewat proyek nyata: mengelola server, menulis kode, dan bereksperimen di ekosistem Minecraft." />
+  <meta property="og:image" content="https://zelyff.github.io/portofolio/assets/og-image.png" />
+  <meta property="og:url" content="https://zelyff.github.io/portofolio/" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zelyff — Server Admin & Developer" />
+  <meta name="twitter:description" content="Belajar dan membangun lewat proyek nyata: mengelola server, menulis kode, dan bereksperimen di ekosistem Minecraft." />
+  <meta name="twitter:image" content="https://zelyff.github.io/portofolio/assets/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/polish.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Zelyff",
+  "jobTitle": "Server Admin & Developer",
+  "url": "https://zelyff.github.io/portofolio/",
+  "sameAs": [
+    "https://github.com/Zelyff",
+    "https://discord.com/users/1375486504373190776"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="ui.skip">Langsung ke konten</a>
+  <div class="bg-ambient" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__logo" href="#">Zelyff<span>.</span></a>
+
+      <nav class="nav__links" aria-label="Navigasi utama" data-i18n-attr="aria-label:ui.primaryNav">
+        <a class="nav__link" href="#about" data-i18n="nav.about">Tentang</a>
+        <a class="nav__link" href="#experience" data-i18n="nav.experience">Pengalaman</a>
+        <a class="nav__link" href="#work" data-i18n="nav.work">Karya</a>
+        <a class="nav__link" href="docs/" data-docs-home data-i18n="nav.docs">Docs</a>
+    <a class="nav__link" href="#contact" data-i18n="nav.contact">Kontak</a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="lang-toggle" role="group" aria-label="Bahasa situs" data-i18n-attr="aria-label:ui.language">
+          <button type="button" class="lang-toggle__option" data-lang="id">ID</button>
+          <button type="button" class="lang-toggle__option" data-lang="en">EN</button>
+        </div>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Ganti ke mode gelap" hidden>
+          <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.4 14A8.7 8.7 0 0 1 10 3.6 8.8 8.8 0 1 0 20.4 14Z"/></svg>
+          <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        </button>
+        <button class="nav__menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
+
+  <!--
+    Deliberately a sibling of <header>, not nested inside it.
+    header.nav uses backdrop-filter, which creates a containing block
+    for descendant position:fixed elements — nesting this panel inside
+    it would anchor "fixed" to the (short) header box instead of the
+    viewport. Keeping it outside header.nav is what makes it cover the
+    full screen correctly.
+  -->
+  <div class="nav__mobile" id="mobile-menu" aria-hidden="true" inert>
+    <a class="nav__link" href="#about" data-i18n="nav.about">Tentang</a>
+    <a class="nav__link" href="#experience" data-i18n="nav.experience">Pengalaman</a>
+    <a class="nav__link" href="#work" data-i18n="nav.work">Karya</a>
+    <a class="nav__link" href="docs/" data-docs-home data-i18n="nav.docs">Docs</a>
+    <a class="nav__link" href="#contact" data-i18n="nav.contact">Kontak</a>
+    <div class="lang-toggle" role="group" aria-label="Bahasa situs" data-i18n-attr="aria-label:ui.language">
+      <button type="button" class="lang-toggle__option" data-lang="id">ID</button>
+      <button type="button" class="lang-toggle__option" data-lang="en">EN</button>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero__meta" aria-hidden="true"><span class="hero__path"><span class="hero__path-icon">↳</span> ~/zelyff/portfolio</span><span data-i18n="hero.edition">PORTOFOLIO PERSONAL · 2026</span></div>
+      <div class="container hero__grid">
+        <div data-reveal>
+          <p class="hero__kicker" data-i18n="hero.kicker">Sedang membangun AlamNusa</p>
+          <h1 class="hero__title">ZELYFF<span class="accent-dot">.</span></h1>
+          <p class="hero__role" data-i18n="hero.role">Server Admin &amp; Developer</p>
+          <p class="hero__statement" data-i18n="hero.statement">Membangun, bereksperimen, dan belajar lewat sistem yang nyata.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#work">
+              <span data-i18n="hero.ctaWork">Lihat karya saya</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" data-arrow aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+            <a class="link-arrow" href="#contact">
+              <span data-i18n="hero.ctaContact">Hubungi saya</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" data-arrow aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__artifact" data-reveal>
+          <div class="status-card">
+            <div class="status-card__bar">
+              <span class="status-card__dot"></span>
+              <span class="status-card__dot"></span>
+              <span class="status-card__dot"></span>
+              <span class="status-card__title" data-i18n="statuscard.title">zelyff@alamnusa</span>
+              <span class="status-card__available" data-i18n="statuscard.availableLabel">aktif</span>
+            </div>
+            <div class="status-card__body">
+              <div class="status-card__tabs" role="tablist" aria-label="Profil dan proyek" data-i18n-attr="aria-label:ui.consoleTabs" data-console-controls hidden>
+                <button type="button" id="console-tab-profile" role="tab" aria-selected="true" aria-controls="console-profile" tabindex="0" data-console-tab="profile"><span class="console-tab-icon" aria-hidden="true">⌘</span><span data-i18n="ui.consoleProfile">Profil</span></button>
+                <button type="button" id="console-tab-projects" role="tab" aria-selected="false" aria-controls="console-projects" tabindex="-1" data-console-tab="projects"><span class="console-tab-icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7V5h6l2 2h10v13H3Z"/></svg></span><span data-i18n="ui.consoleProjects">Proyek</span></button>
+              </div>
+              <div class="status-card__panel" id="console-profile" role="tabpanel" aria-labelledby="console-tab-profile">
+              <p class="status-card__command"><span aria-hidden="true">~</span> <span class="status-card__prompt" aria-hidden="true">❯</span> <span>whoami</span></p>
+              <div class="status-card__row">
+                <span class="status-card__label" data-i18n="statuscard.roleLabel">peran</span>
+                <span class="status-card__value" data-i18n="statuscard.roleValue">server admin</span>
+              </div>
+              <div class="status-card__row">
+                <span class="status-card__label" data-i18n="statuscard.sinceLabel">sejak</span>
+                <span class="status-card__value" data-i18n="statuscard.sinceValue">Okt 2025</span>
+              </div>
+              <div class="status-card__row">
+                <span class="status-card__label" data-i18n="statuscard.focusLabel">fokus</span>
+                <span class="status-card__value" data-i18n="statuscard.focusValue">sistem / development</span>
+              </div>
+              </div>
+              <div class="status-card__panel" id="console-projects" role="tabpanel" aria-labelledby="console-tab-projects" hidden>
+                <p class="status-card__command"><span aria-hidden="true">~</span> <span class="status-card__prompt" aria-hidden="true">❯</span> <span>ls projects</span></p>
+                <ul class="console-projects" data-console-projects><!-- CONSOLE-PROJECTS:START --><li><a href="docs/nusacooking/"><span class="console-file-dot" aria-hidden="true"></span><span>NusaCooking</span><span class="console-file-state">↗</span></a></li><li><a href="docs/nusainv/"><span class="console-file-dot" aria-hidden="true"></span><span>NusaInv</span><span class="console-file-state">↗</span></a></li><li><a href="docs/nusaskblocker/"><span class="console-file-dot" aria-hidden="true"></span><span>NusaSKBlocker</span><span class="console-file-state">↗</span></a></li><li><a href="docs/gogoasisstant/"><span class="console-file-dot" aria-hidden="true"></span><span>GogoAsisstant</span><span class="console-file-state">↗</span></a></li><!-- CONSOLE-PROJECTS:END --></ul>
+              </div>
+            </div>
+            <div class="status-card__footer">
+              <span data-i18n="statuscard.footer">waktu lokal</span>
+              <span><span data-wib-clock>—</span><span class="status-card__cursor" aria-hidden="true"></span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container"><div class="hero-summary"><a href="#work" class="hero-summary__item"><span class="hero-summary__value" data-project-count="internal">03</span><span data-i18n="hero.summaryPlugins">Sistem internal</span></a><a href="projects/" class="hero-summary__item"><span class="hero-summary__value" data-project-count="bots">01</span><span data-i18n="hero.summaryBots">Asisten Discord</span></a><a href="#experience" class="hero-summary__item hero-summary__item--server"><span class="hero-summary__server"><span class="summary-status" aria-hidden="true"></span>AlamNusa</span><span data-i18n="hero.summaryServer">Aktif dikembangkan</span></a><a href="#about" class="hero-summary__scroll"><span data-i18n="hero.explore">Jelajahi halaman</span><span aria-hidden="true">↓</span></a></div></div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section section--tight" id="about">
+      <div class="container about-grid">
+        <div data-reveal>
+          <div class="section-kicker">
+            <span class="section-index" aria-hidden="true">01</span>
+            <p class="eyebrow" data-i18n="about.eyebrow">Tentang</p>
+          </div>
+          <div class="about-workspace"><p class="about-workspace__label" data-i18n="about.workspace">SISTEM INTERNAL</p><div class="about-workspace__root"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 7V5h6l2 2h10v13H3Z"/></svg><span>AlamNusa</span><span class="about-workspace__count" data-project-count="internal">03</span></div><ul data-workspace-projects><!-- WORKSPACE:START --><li><a href="docs/nusacooking/"><span class="workspace-file" aria-hidden="true">N</span>NusaCooking<span aria-hidden="true">↗</span></a></li><li><a href="docs/nusainv/"><span class="workspace-file" aria-hidden="true">N</span>NusaInv<span aria-hidden="true">↗</span></a></li><li><a href="docs/nusaskblocker/"><span class="workspace-file" aria-hidden="true">N</span>NusaSKBlocker<span aria-hidden="true">↗</span></a></li><!-- WORKSPACE:END --></ul><p class="about-workspace__note"><span class="workspace-lock" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><span data-i18n="about.workspaceNote">Privat · dibuat untuk komunitas</span></p></div>
+        </div>
+        <div data-reveal>
+          <h2 class="about-declaration" data-i18n="about.declaration">Saya Zelyff.</h2>
+          <div class="about-copy">
+            <p class="about-copy__lead" data-i18n="about.p1">Server administrator dan developer yang terus bertumbuh — menjelajahi sistem server Minecraft, pengembangan web, dan apa pun yang menarik rasa ingin tahu saya berikutnya.</p>
+            <p data-i18n="about.p2">Saat ini saya bekerja sebagai Server Admin di AlamNusa, dan menjadikan pengalaman nyata di sana sebagai bagian dari proses belajar saya.</p>
+          </div>
+          <dl class="about-facts">
+            <div class="about-fact">
+              <dt data-i18n="about.factStatusLabel">Status</dt>
+              <dd data-i18n="about.factStatusValue">Developer yang terus bertumbuh</dd>
+            </div>
+            <div class="about-fact">
+              <dt data-i18n="about.factFocusLabel">Fokus</dt>
+              <dd data-i18n="about.factFocusValue">Server admin, Minecraft, web dev</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section section--tight" id="experience">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <div class="section-kicker section-kicker--stacked">
+            <span class="section-index" aria-hidden="true">02</span>
+            <p class="eyebrow" data-i18n="experience.eyebrow">Pengalaman</p>
+          </div>
+          <h2 class="section-title" data-i18n="experience.title">Pengalaman</h2>
+          <p class="section-lede" data-i18n="experience.lede">Pengalaman nyata di dunia kerja, bukan sekadar teori.</p>
+        </div>
+
+        <article class="experience-card" data-reveal>
+          <div class="experience-card__identity">
+            <div class="experience-card__top"><span class="experience-card__eyebrow">MINECRAFT COMMUNITY</span><span class="experience-card__active"><span class="summary-status" aria-hidden="true"></span><span data-i18n="experience.active">Peran aktif</span></span></div>
+            <div class="experience-card__brand"><span class="experience-card__monogram" aria-hidden="true">A<span>.</span></span><h3 data-i18n="experience.org">AlamNusa</h3></div>
+            <p class="experience-card__role" data-i18n="experience.role">Server Admin &amp; Developer</p>
+            <div class="experience-card__period"><span class="experience-card__period-icon" aria-hidden="true">↳</span><span data-i18n="experience.period">Okt 2025 — Sekarang</span></div>
+            <p class="experience-card__focus" data-i18n="experience.focus">Operasional · Pengembangan · Komunitas</p>
+          </div>
+          <div class="experience-card__body"><p class="experience-card__label" data-i18n="experience.scope">LINGKUP PERAN</p><p class="experience-card__desc" data-i18n="experience.desc">Mengelola server harian dan menjadi penghubung antara pemilik, staf, dan member komunitas AlamNusa.</p><div class="responsibility-list" aria-label="Tanggung jawab" data-i18n-attr="aria-label:ui.responsibilities"><div class="responsibility-row"><span class="responsibility-row__index font-mono" aria-hidden="true">01</span><span class="responsibility-row__label" data-i18n="experience.resp1">Player Management</span></div><div class="responsibility-row"><span class="responsibility-row__index font-mono" aria-hidden="true">02</span><span class="responsibility-row__label" data-i18n="experience.resp2">Moderasi &amp; Punishment</span></div><div class="responsibility-row"><span class="responsibility-row__index font-mono" aria-hidden="true">03</span><span class="responsibility-row__label" data-i18n="experience.resp3">Plugin &amp; Konfigurasi Server</span></div><div class="responsibility-row"><span class="responsibility-row__index font-mono" aria-hidden="true">04</span><span class="responsibility-row__label" data-i18n="experience.resp4">Event Komunitas</span></div><div class="responsibility-row"><span class="responsibility-row__index font-mono" aria-hidden="true">05</span><span class="responsibility-row__label" data-i18n="experience.resp5">Bug Reporting</span></div><div class="responsibility-row"><span class="responsibility-row__index font-mono" aria-hidden="true">06</span><span class="responsibility-row__label" data-i18n="experience.resp6">Koordinasi Owner, Staf &amp; Member</span></div></div></div>
+          <footer class="experience-card__footer"><span><strong data-project-count="internal">03</strong> <span data-i18n="experience.internal">sistem internal untuk AlamNusa</span></span><a href="#work"><span data-i18n="experience.explore">Lihat sistem yang dibangun</span><span aria-hidden="true">↗</span></a></footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ TRANSITION: experience → work ============ -->
+    <div class="container">
+      <div class="transition-statement" data-reveal>
+        <p data-i18n="transition.toWork">Dari kebutuhan komunitas, menjadi sistem yang bisa dipakai.</p>
+      </div>
+    </div>
+
+    <!-- ============ SELECTED EXPERIMENTS ============ -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <h2 class="section-statement">
+            <span data-i18n="work.titleLine1">Karya</span><br />
+            <span data-i18n="work.titleLine2">Terpilih</span>
+          </h2>
+          <p class="section-lede" data-i18n="work.lede">Pilihan sistem dan eksperimen yang saya bangun untuk kebutuhan komunitas.</p>
+        </div>
+        <div class="work-toolbar"><div class="work-filters" role="group" aria-label="Filter proyek" data-i18n-attr="aria-label:ui.filterProjects" data-project-filters hidden><!-- FILTERS:START --><button type="button" data-project-filter="all" aria-pressed="true"><span>Semua</span><span data-filter-count="all">4</span></button><button type="button" data-project-filter="plugins" aria-pressed="false"><span>Plugin</span><span data-filter-count="plugins">3</span></button><button type="button" data-project-filter="bots" aria-pressed="false"><span>Discord</span><span data-filter-count="bots">1</span></button><!-- FILTERS:END --></div><p class="work-toolbar__note"><span class="toolbar-dot" aria-hidden="true"></span><span data-i18n="work.toolbarNote">Dibangun dari kebutuhan nyata</span></p></div>
+        <p class="visually-hidden" role="status" aria-live="polite" data-project-feedback></p>
+
+        <div class="project-grid" data-project-grid data-project-scope="featured" data-static-projects data-render-lang="id"><!-- PROJECTS:START --><article class="card project-card" id="project-nusacooking" data-project="nusacooking" data-project-kind="plugins" data-layout="wide"><div class="project-card__body"><div class="project-card__top"><span class="project-card__symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-5 6 5 6m8-12 5 6-5 6m-3-14-2 20"/></svg></span><span class="project-card__number font-mono" aria-hidden="true">01</span></div><span class="project-card__type">Minecraft Plugin</span><h3 class="project-card__title">NusaCooking</h3><p class="project-card__desc">Sistem memasak internal AlamNusa yang menghubungkan resep, bahan, dan proses memasak.</p><div class="tag-list"><span class="badge">Java</span><span class="badge">Paper</span><span class="badge">Cooking System</span></div><div class="project-card__status"><span class="project-state">Selesai</span><span>Privat · AlamNusa</span></div><details class="project-story"><summary>Tentang proyek<span aria-hidden="true">+</span></summary><p>Dikembangkan untuk kebutuhan gameplay AlamNusa, dari memilih resep dan menyiapkan bahan hingga menjalani proses memasak. Proyek sudah selesai; source code khusus untuk AlamNusa.</p></details><a class="project-doc-link" href="docs/nusacooking/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-3-2H4Zm16 0h-4a3 3 0 0 0-3 3v14a4 4 0 0 1 3-2h6V4Z"/></svg><span>Baca dokumentasi</span><span aria-hidden="true">↗</span></a></div><div class="project-preview project-preview--flow"><div class="preview-heading"><span>ALUR PEMAIN</span><span aria-hidden="true">↳</span></div><ol class="cooking-flow"><li><span class="cooking-flow__step" aria-hidden="true">01</span><span>Pilih resep</span><span class="flow-step-mark" aria-hidden="true">↓</span></li><li><span class="cooking-flow__step" aria-hidden="true">02</span><span>Masukkan bahan</span><span class="flow-step-mark" aria-hidden="true">↓</span></li><li><span class="cooking-flow__step" aria-hidden="true">03</span><span>Proses memasak</span><span class="flow-step-mark" aria-hidden="true">↓</span></li><li><span class="cooking-flow__step" aria-hidden="true">04</span><span>Ambil hasil</span><span class="flow-step-mark" aria-hidden="true">✓</span></li></ol><span class="preview-caption">NusaCooking / AlamNusa</span></div></article>
+<article class="card project-card" id="project-nusainv" data-project="nusainv" data-project-kind="plugins" data-layout="standard"><div class="project-card__body"><div class="project-card__top"><span class="project-card__symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-5 6 5 6m8-12 5 6-5 6m-3-14-2 20"/></svg></span><span class="project-card__number font-mono" aria-hidden="true">02</span></div><span class="project-card__type">Minecraft Plugin</span><h3 class="project-card__title">NusaInv</h3><p class="project-card__desc">Pengelolaan equipment dan aksesori untuk melengkapi sistem karakter di AlamNusa.</p><div class="tag-list"><span class="badge">Java</span><span class="badge">Paper</span><span class="badge">Equipment</span></div><div class="project-card__status"><span class="project-state">Selesai</span><span>Privat · AlamNusa</span></div><details class="project-story"><summary>Tentang proyek<span aria-hidden="true">+</span></summary><p>Menata interaksi perlengkapan tambahan pemain dan hubungannya dengan sistem karakter. Proyek sudah selesai dan digunakan sebagai pengembangan internal; source code khusus untuk AlamNusa.</p></details><a class="project-doc-link" href="docs/nusainv/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-3-2H4Zm16 0h-4a3 3 0 0 0-3 3v14a4 4 0 0 1 3-2h6V4Z"/></svg><span>Baca dokumentasi</span><span aria-hidden="true">↗</span></a></div></article>
+<article class="card project-card" id="project-nusaskblocker" data-project="nusaskblocker" data-project-kind="plugins" data-layout="standard"><div class="project-card__body"><div class="project-card__top"><span class="project-card__symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-5 6 5 6m8-12 5 6-5 6m-3-14-2 20"/></svg></span><span class="project-card__number font-mono" aria-hidden="true">03</span></div><span class="project-card__type">Server Utility</span><h3 class="project-card__title">NusaSKBlocker</h3><p class="project-card__desc">Pengaturan efek AuraSkills per dunia, mengikuti aturan gameplay setiap area server.</p><div class="tag-list"><span class="badge">Java</span><span class="badge">AuraSkills</span><span class="badge">World Rules</span></div><div class="project-card__status"><span class="project-state">Selesai</span><span>Privat · AlamNusa</span></div><details class="project-story"><summary>Tentang proyek<span aria-hidden="true">+</span></summary><p>Utilitas untuk memisahkan penerapan efek skill antardunia pada AlamNusa. Proyek sudah selesai, dengan source code privat yang dikembangkan khusus untuk kebutuhan server.</p></details><a class="project-doc-link" href="docs/nusaskblocker/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-3-2H4Zm16 0h-4a3 3 0 0 0-3 3v14a4 4 0 0 1 3-2h6V4Z"/></svg><span>Baca dokumentasi</span><span aria-hidden="true">↗</span></a></div></article>
+<article class="card project-card" id="project-gogoasisstant" data-project="gogoasisstant" data-project-kind="bots" data-layout="wide"><div class="project-card__body"><div class="project-card__top"><span class="project-card__symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M8 10h8m-8 3h5"/></svg></span><span class="project-card__number font-mono" aria-hidden="true">04</span></div><span class="project-card__type">Discord Bot</span><h3 class="project-card__title">GogoAsisstant</h3><p class="project-card__desc">Asisten AI di Discord untuk percakapan dan kebutuhan informasi komunitas.</p><div class="tag-list"><span class="badge">Discord</span><span class="badge">AI</span><span class="badge">Community</span></div><div class="project-card__status"><span class="project-state project-state--active">Aktif berjalan</span><span>Alat komunitas</span></div><details class="project-story"><summary>Tentang proyek<span aria-hidden="true">+</span></summary><p>Bot sudah aktif berjalan. Pengembangannya membawa bantuan berbasis AI ke percakapan Discord dan konteks komunitas. Tidak ada tautan instalasi publik yang disediakan di portofolio ini.</p></details><a class="project-doc-link" href="docs/gogoasisstant/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-3-2H4Zm16 0h-4a3 3 0 0 0-3 3v14a4 4 0 0 1 3-2h6V4Z"/></svg><span>Baca dokumentasi</span><span aria-hidden="true">↗</span></a></div><div class="project-preview project-preview--wordmark"><div class="preview-heading"><span>DISCORD / AI ASSISTANT</span><span aria-hidden="true">✳</span></div><div class="gogo-wordmark" aria-hidden="true">Gogo<span>Asisstant<span class="gogo-wordmark__dot">.</span></span></div><div class="gogo-status"><span class="summary-status" aria-hidden="true"></span>Aktif berjalan</div></div></article><!-- PROJECTS:END --></div>
+        <div class="work-archive"><p data-i18n="work.archiveNote">Proyek berkembang, dokumentasi ikut bertumbuh.</p><a class="link-arrow" href="projects/"><span data-i18n="work.archive">Semua proyek &amp; dokumentasi</span><span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <!-- ============ TRANSITION: work → learning ============ -->
+    <div class="container">
+      <div class="transition-statement" data-reveal>
+        <p data-i18n="transition.toLearning">Proyek Nusa dikembangkan khusus untuk AlamNusa. Source code-nya privat; fungsi dan konteksnya bisa dibaca di atas.</p>
+      </div>
+    </div>
+
+    <!-- ============ CURRENTLY EXPLORING ============ -->
+    <section class="section section--tight" id="learning">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow" data-i18n="learning.eyebrow">Sedang Dieksplorasi</p>
+          <h2 class="section-title" data-i18n="learning.title">Teknologi &amp; Tools</h2>
+          <p class="section-lede" data-i18n="learning.lede">Tools dan teknologi yang benar-benar saya pakai atau pelajari.</p>
+        </div>
+
+        <div class="stack-groups" data-reveal>
+          <div>
+            <p class="stack-group__title">
+              <span class="stack-group__index font-mono" aria-hidden="true">01 —</span>
+              <span data-i18n="learning.exploringTitle">Development</span>
+            </p>
+            <div class="stack-group__list"><span>Java</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+          <div>
+            <p class="stack-group__title">
+              <span class="stack-group__index font-mono" aria-hidden="true">02 —</span>
+              <span data-i18n="learning.mcTitle">Minecraft</span>
+            </p>
+            <div class="stack-group__list"><span>Paper</span><span>Spigot</span><span>Plugin ecosystem</span><span>Server systems</span></div>
+          </div>
+          <div>
+            <p class="stack-group__title">
+              <span class="stack-group__index font-mono" aria-hidden="true">03 —</span>
+              <span data-i18n="learning.toolsTitle">Tools</span>
+            </p>
+            <div class="stack-group__list"><span>VS Code</span><span>IntelliJ IDEA</span><span>Maven</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <h2 class="section-statement">
+            <span data-i18n="contact.titleLine1">Mari</span><br />
+            <span data-i18n="contact.titleLine2">Terhubung.</span>
+          </h2>
+          <p class="section-lede" data-i18n="contact.lede">Mau ngobrol, kolaborasi, atau sekadar eksplorasi sesuatu bareng?</p>
+        </div>
+
+        <div class="contact-methods" data-reveal>
+          <a class="contact-method" href="https://discord.com/users/1375486504373190776" target="_blank" rel="noopener noreferrer">
+            <span>
+              <span class="contact-method__label">Discord</span>
+              <span class="contact-method__value" data-i18n="contact.discordValue">Buka profil Discord</span>
+            </span>
+            <svg class="contact-method__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M7 17L17 7M9 7h8v8"/>
+            </svg>
+          </a>
+          <a class="contact-method" href="https://github.com/Zelyff?tab=repositories" target="_blank" rel="noopener noreferrer">
+            <span>
+              <span class="contact-method__label">GitHub</span>
+              <span class="contact-method__value" data-i18n="contact.githubValue">@Zelyff</span>
+            </span>
+            <svg class="contact-method__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M7 17L17 7M9 7h8v8"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <nav class="section-rail" aria-label="Bagian halaman" data-i18n-attr="aria-label:ui.sectionNav"><a href="#about" class="section-rail__link" aria-label="Tentang" data-i18n-attr="aria-label:nav.about"><span class="section-rail__number" aria-hidden="true">01</span><span class="section-rail__line" aria-hidden="true"></span></a><a href="#experience" class="section-rail__link" aria-label="Pengalaman" data-i18n-attr="aria-label:nav.experience"><span class="section-rail__number" aria-hidden="true">02</span><span class="section-rail__line" aria-hidden="true"></span></a><a href="#work" class="section-rail__link" aria-label="Karya" data-i18n-attr="aria-label:nav.work"><span class="section-rail__number" aria-hidden="true">03</span><span class="section-rail__line" aria-hidden="true"></span></a><a href="#learning" class="section-rail__link" aria-label="Teknologi &amp; Tools" data-i18n-attr="aria-label:learning.title"><span class="section-rail__number" aria-hidden="true">04</span><span class="section-rail__line" aria-hidden="true"></span></a><a href="#contact" class="section-rail__link" aria-label="Kontak" data-i18n-attr="aria-label:nav.contact"><span class="section-rail__number" aria-hidden="true">05</span><span class="section-rail__line" aria-hidden="true"></span></a></nav>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="footer__brand">Zelyff<span>.</span></div>
+        <p class="footer__meta" data-i18n="footer.tagline">Masih belajar. Masih membangun.</p>
+      </div>
+      <nav class="footer__links" aria-label="Tautan footer" data-i18n-attr="aria-label:ui.footerNav">
+        <a href="https://discord.com/users/1375486504373190776" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="https://github.com/Zelyff?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+      <p class="footer__note">© 2026 Zelyff.</p>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/project-data.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

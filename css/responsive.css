@@ -1,0 +1,133 @@
+/* =========================================================
+   ZELYFF — responsive.css
+   True mobile-first: components.css / main.css already contain
+   the mobile (~320–767px) base styles directly. This file only
+   contains progressive-enhancement overrides for wider
+   viewports, plus two narrow-safeguard tweaks. No property here
+   should duplicate a value already correct at the base layer.
+   ========================================================= */
+
+/* ---------- Small phones (< 375px safeguard) ---------- */
+@media (max-width: 374px) {
+  .container {
+    padding-inline: var(--space-4);
+  }
+}
+
+/* ---------- Tablet and up (>= 768px) ---------- */
+@media (min-width: 768px) {
+  .nav__links {
+    display: flex;
+  }
+
+  .nav__right .lang-toggle {
+    display: inline-flex;
+  }
+
+  .nav__menu-btn {
+    display: none;
+  }
+
+  .nav__mobile {
+    display: none;
+  }
+
+  .section {
+    padding-block: var(--space-9);
+  }
+
+  /* Deliberately smaller than .section — keeps About/Experience/Learning
+     closer together while Work and Contact get the full breathing room
+     as the page's visual statement/climax sections (§62 rhythm). */
+  .section--tight {
+    padding-block: var(--space-8);
+  }
+
+  .hero {
+    padding-top: var(--space-9);
+    padding-bottom: var(--space-9);
+  }
+
+  .hero__grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--space-8);
+    align-items: end;
+  }
+
+  .hero__artifact {
+    margin-top: var(--space-8);
+  }
+
+  .about-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: var(--space-8);
+  }
+
+  .about-facts {
+    border-left: 1px solid var(--color-border);
+    border-top: none;
+    padding-left: var(--space-5);
+    padding-top: 0;
+  }
+
+  .about-declaration {
+    font-size: var(--fs-3xl);
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .experience-item {
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-6);
+  }
+
+  .responsibility-row {
+    padding-block: var(--space-4);
+  }
+
+  .responsibility-row__label {
+    font-size: var(--fs-md);
+  }
+
+  .stack-groups {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .contact-method__label {
+    font-size: var(--fs-3xl);
+  }
+
+  .empty-state {
+    flex-direction: row;
+    align-items: center;
+    padding-block: var(--space-9);
+  }
+
+  .transition-statement p {
+    font-size: var(--fs-xl);
+  }
+
+  .footer__brand {
+    font-size: var(--fs-3xl);
+  }
+
+  .footer__inner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* ---------- Large desktop (>= 1280px) ---------- */
+@media (min-width: 1280px) {
+  :root {
+    --container-w: 1180px;
+  }
+}
+
+/* ---------- Guard: no horizontal overflow ---------- */
+html, body {
+  overflow-x: hidden;
+}
